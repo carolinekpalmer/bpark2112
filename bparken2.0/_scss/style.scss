@@ -1,0 +1,183 @@
+@import "_Mixin.scss";
+@import "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
+/* @import "_social.scss"; */
+
+/* Basic Style */
+body{
+    font-family: 'Montserrat', sans-serif;
+  /*  background-color: red;*/
+    }
+
+#burger{
+       display:none;
+     }
+
+#burgermenu{
+  @include icons(transparent); //mixin fra undervisningen
+  float:right;
+  color:Black;
+}
+input {
+  display: none;
+}
+#burger:checked + nav ul{
+  left:0;
+}
+
+nav{
+  width:300px;
+  ul{
+    height:100%;
+    position:fixed;
+    left:-305px;
+    top:0;
+    background-color:#e0e0e0;
+    box-shadow:3px 0px 5px rgba(0,0,0,0.25);
+    transition-duration:.3s;
+    z-index:1;
+    li{
+      float:none;
+      height:50px;
+      color:#212121;
+      border-bottom:1px solid #757575;
+      &:hover{
+        background-color:#c1c1c1;
+     }
+   }
+ }
+}
+/* END nav*/
+
+main{
+        margin-right: 20px;
+        margin-left: 20px;
+        margin-top: 20px;
+          }
+
+p{
+        text-align: left;
+        line-height: 25px;
+      }
+
+    .logo{
+          position: absolute;
+            top: 20px;
+            left: 140px;
+            height: 100px;
+            width: 100px;
+            }
+
+
+          .linje{
+            border-top: solid 3px black;
+            border-bottom: solid 3px black;
+            margin-top: 50px;
+          }
+
+          img{
+            width: 300px;
+          }
+
+          footer{
+            bottom: 0px;
+            position: absolute;
+            margin-left: auto;
+            bottom: -900px;
+            }
+
+            h3{
+              font-size: 18px;
+              float: left
+            }
+
+/* lcj */
+
+      i.fa{
+      float: right;
+      margin-left: 15px;
+      margin-top: 25px;
+
+        }
+        i.fa-facebook{
+      @include social(#3b5998);
+        }
+        i.fa-instagram{
+      @include social(#bc2a8d);
+            }
+
+/*DESK*/
+@media  screen and (min-width: 730px) {
+  #burgermenu{
+     display:none;
+   }
+   nav{
+     ul{
+        list-style-type: none;
+        margin: 0;
+        margin-top: 50px;
+        padding: 0;
+        overflow: hidden;
+        border-top: solid 3px black;
+        border-bottom: solid 3px black;
+    }
+
+    li {
+        float: right;
+    }
+
+    li a {
+        display: block;
+        color: Black;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+    li a:hover:not(.active) {
+        background-color: #111;
+    }
+
+    .active {
+        background-color: #4CAF50;
+    }
+  }
+
+.logo{
+position: absolute;
+  top: 10px;
+  left: 85px;
+  height: 130px;
+  width: 130px;
+}
+
+  /* lcj */
+  main {
+    padding-top: 20px;
+    padding-bottom: 50px;
+    text-align: justify;
+    display: block;
+    margin-left: 120px;
+    margin-right: 120px;
+    background-color: skyblue;
+  }
+
+
+
+  img{
+    width: 50%;
+    margin: 0 auto;
+    display: block;
+  }
+
+
+  footer{
+    display: block;
+    color: Black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    border-top: solid 3px black;
+    margin-left:10px;
+  }
+
+} /* min-width 730px */
